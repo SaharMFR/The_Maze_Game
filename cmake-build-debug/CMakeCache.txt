@@ -216,6 +216,9 @@ ProcessorCount_cmd_sysctl:FILEPATH=/usr/sbin/sysctl
 SDL2MAIN_LIBRARY:FILEPATH=/opt/homebrew/lib/libSDL2main.a
 
 //Path to a library.
+SDL2_IMAGE_LIBRARY:FILEPATH=/opt/homebrew/lib/libSDL2_image.dylib
+
+//Path to a library.
 SDL2_LIBRARY:FILEPATH=/opt/homebrew/lib/libSDL2.dylib
 
 //Value Computed by CMake

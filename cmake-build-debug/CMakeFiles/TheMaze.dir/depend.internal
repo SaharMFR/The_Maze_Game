@@ -4,6 +4,7 @@
 CMakeFiles/TheMaze.dir/src/main.c.o
  /Users/saharmohamed/CLionProjects/TheMaze/inc/maze.h
  /Users/saharmohamed/CLionProjects/TheMaze/src/main.c
+ /opt/homebrew/Cellar/sdl2_image/2.8.2_1/include/SDL2/SDL_image.h
  /opt/homebrew/opt/sdl2/include/SDL2/SDL.h
  /opt/homebrew/opt/sdl2/include/SDL2/SDL_assert.h
  /opt/homebrew/opt/sdl2/include/SDL2/SDL_atomic.h
@@ -57,6 +58,7 @@ CMakeFiles/TheMaze.dir/src/main.c.o
 CMakeFiles/TheMaze.dir/src/maze.c.o
  /Users/saharmohamed/CLionProjects/TheMaze/inc/maze.h
  /Users/saharmohamed/CLionProjects/TheMaze/src/maze.c
+ /opt/homebrew/Cellar/sdl2_image/2.8.2_1/include/SDL2/SDL_image.h
  /opt/homebrew/opt/sdl2/include/SDL2/SDL.h
  /opt/homebrew/opt/sdl2/include/SDL2/SDL_assert.h
  /opt/homebrew/opt/sdl2/include/SDL2/SDL_atomic.h

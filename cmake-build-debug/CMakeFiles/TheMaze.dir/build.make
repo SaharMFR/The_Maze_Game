@@ -103,6 +103,7 @@ TheMaze_EXTERNAL_OBJECTS =
 TheMaze: CMakeFiles/TheMaze.dir/src/main.c.o
 TheMaze: CMakeFiles/TheMaze.dir/src/maze.c.o
 TheMaze: CMakeFiles/TheMaze.dir/build.make
+TheMaze: /opt/homebrew/lib/libSDL2_image.dylib
 TheMaze: /opt/homebrew/lib/libSDL2.dylib
 TheMaze: /opt/homebrew/lib/libSDL2main.a
 TheMaze: CMakeFiles/TheMaze.dir/link.txt
