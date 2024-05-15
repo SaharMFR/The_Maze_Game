@@ -13,10 +13,11 @@
 
 #include <SDL.h>
 #include <SDL_image.h>
+#include <SDL_ttf.h>
 #include <stdio.h>
 
-#define screenWidth 640
-#define screenHeight 480
+#define screenWidth 1024
+#define screenHeight 700
 #define mapWidth 24
 #define mapHeight 24
 

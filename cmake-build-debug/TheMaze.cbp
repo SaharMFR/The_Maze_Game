@@ -26,6 +26,7 @@
 				<Compiler>
 					<Add directory="/opt/homebrew/opt/sdl2/include/SDL2"/>
 					<Add directory="/opt/homebrew/Cellar/sdl2_image/2.8.2_1/include/SDL2"/>
+					<Add directory="/opt/homebrew/Cellar/sdl2_ttf/2.22.0/include/SDL2"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
@@ -47,6 +48,7 @@
 				<Compiler>
 					<Add directory="/opt/homebrew/opt/sdl2/include/SDL2"/>
 					<Add directory="/opt/homebrew/Cellar/sdl2_image/2.8.2_1/include/SDL2"/>
+					<Add directory="/opt/homebrew/Cellar/sdl2_ttf/2.22.0/include/SDL2"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>

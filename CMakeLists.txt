@@ -12,10 +12,14 @@ add_executable(TheMaze src/main.c
 link_directories(
         /opt/homebrew/opt/sdl2/lib
         /opt/homebrew/Cellar/sdl2_image/2.8.2_1/include/SDL2/
+        /opt/homebrew/Cellar/sdl2_ttf/2.22.0/include/SDL2/
 )
 
 include_directories(/opt/homebrew/Cellar/sdl2_image/2.8.2_1/include/SDL2/)
+include_directories(/opt/homebrew/Cellar/sdl2_ttf/2.22.0/include/SDL2/)
+
 find_library(SDL2_LIBRARY NAMES SDL2 PATHS /opt/homebrew/opt/sdl2/lib)
 find_library(SDL2MAIN_LIBRARY NAMES SDL2main PATHS /opt/homebrew/opt/sdl2/lib)
 find_library(SDL2_IMAGE_LIBRARY NAMES SDL2_image PATHS /opt/homebrew/Cellar/sdl2_image/2.8.2_1/include/SDL2/)
-target_link_libraries(TheMaze PRIVATE ${SDL2_IMAGE_LIBRARY} ${SDL2_LIBRARY} ${SDL2MAIN_LIBRARY})
+find_library(SDL2_TTF_LIBRARY NAMES SDL2_ttf PATHS /opt/homebrew/Cellar/sdl2_ttf/2.22.0/include/SDL2/)
+target_link_libraries(TheMaze PRIVATE ${SDL2_IMAGE_LIBRARY} ${SDL2_LIBRARY} ${SDL2MAIN_LIBRARY} ${SDL2_TTF_LIBRARY})

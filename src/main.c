@@ -29,7 +29,12 @@ int worldMap[mapWidth][mapHeight] =
         };
 
 
-
+/**
+ * main - The main function to render mazes.
+ * @param argc: The argument count.
+ * @param argv: The argument vector (all arguments).
+ * @return: 0 if successfully completed, 1 when failure happen.
+ */
 int main(int argc, char *argv[])
 {
     double posX = 22, posY = 12;  //x and y start position
@@ -44,7 +49,7 @@ int main(int argc, char *argv[])
 
     SDL_Init(SDL_INIT_VIDEO);
     SDL_CreateWindowAndRenderer(screenWidth, screenHeight, 0, &window, &renderer);
-    SDL_SetWindowTitle(window, "Raycaster");
+    SDL_SetWindowTitle(window, "Sahar's Maze Game");
 
     SDL_Texture *image = IMG_LoadTexture(renderer, "../assets/background.png");
     if (image == NULL)
@@ -59,14 +64,14 @@ int main(int argc, char *argv[])
     int buttonWidth = 100;
     int buttonHeight = 50;
 
-    // Main loop flag
-    int quit = 0;
+    // Main loops flags
+    int quit = 0, start = 0;
 
     // Event handler
     SDL_Event e;
 
-    // Main loop
-    while (!quit)
+    // Starting loop
+    while (!quit && !start)
     {
         // Handle events on queue
         while (SDL_PollEvent(&e) != 0)
@@ -85,7 +90,7 @@ int main(int argc, char *argv[])
                 if (mouseX >= buttonX && mouseX <= buttonX + buttonWidth && mouseY >= buttonY && mouseY <= buttonY + buttonHeight)
                 {
                     // Start button clicked
-                    quit = 1;
+                    start = 1;
                     // Implement the action you want to take when the button is clicked
                 }
             }
@@ -107,11 +112,24 @@ int main(int argc, char *argv[])
     // Free resources and close SDL
     SDL_DestroyTexture(image);
 
-    while (1)
+    while (!quit)
     {
         SDL_Event event;
         if (SDL_PollEvent(&event) && event.type == SDL_QUIT)
-            break;
+            quit = 1;
+
+        SDL_SetRenderDrawColor(renderer, 0, 0x70, 0, 0xFF); // Green color for earth
+        SDL_RenderClear(renderer);
+
+        // Render upper half with baby blue color
+        SDL_Rect upperHalfRect = {0, 0, screenWidth, screenHeight / 2};
+        SDL_SetRenderDrawColor(renderer, 0x40, 0xA2, 0xFF, 0xFF); // Baby blue color for sky
+        SDL_RenderFillRect(renderer, &upperHalfRect);
+
+        // Render lower half with green color
+        SDL_Rect lowerHalfRect = {0, screenHeight / 2, screenWidth, screenHeight / 2};
+        SDL_SetRenderDrawColor(renderer, 0x00, 0x99, 0x00, 0xFF); // Green color for earth
+        SDL_RenderFillRect(renderer, &lowerHalfRect);
 
         for (int x = 0; x < screenWidth; x++)
         {
@@ -204,28 +222,28 @@ int main(int argc, char *argv[])
             switch (worldMap[mapX][mapY])
             {
                 case 1:
-                    color = (SDL_Color){255, 0, 0, 255}; // red
+                    color = (SDL_Color){115, 115, 115, 255}; // red
                     break;
                 case 2:
-                    color = (SDL_Color){0, 255, 0, 255}; // green
+                    color = (SDL_Color){115, 115, 115, 255}; // green
                     break;
                 case 3:
-                    color = (SDL_Color){0, 0, 255, 255}; // blue
+                    color = (SDL_Color){115, 115, 115, 255}; // blue
                     break;
                 case 4:
-                    color = (SDL_Color){255, 255, 255, 255}; // white
+                    color = (SDL_Color){115, 115, 115, 255}; // white
                     break;
                 default:
-                    color = (SDL_Color){255, 255, 0, 255}; // yellow
+                    color = (SDL_Color){115, 115, 115, 255}; // yellow
                     break;
             }
 
             //give x and y sides different brightness
             if (side == 1)
             {
-                color.r /= 2;
-                color.g /= 2;
-                color.b /= 2;
+                color.r /= 1.2;
+                color.g /= 1.2;
+                color.b /= 1.2;
             }
 
             //draw the pixels of the stripe as a vertical line
@@ -246,7 +264,7 @@ int main(int argc, char *argv[])
         double rotSpeed = frameTime * 3.0;  //the constant value is in radians/second
 
         //move forward if no wall in front of you
-        if (SDL_GetKeyboardState(NULL)[SDL_SCANCODE_UP])
+        if (SDL_GetKeyboardState(NULL)[SDL_SCANCODE_UP] || SDL_GetKeyboardState(NULL)[SDL_SCANCODE_W])
         {
             if (worldMap[(int)(posX + dirX * moveSpeed)][(int)posY] == 0)
                 posX += dirX * moveSpeed;
@@ -254,7 +272,7 @@ int main(int argc, char *argv[])
                 posY += dirY * moveSpeed;
         }
         //move backwards if no wall behind you
-        if (SDL_GetKeyboardState(NULL)[SDL_SCANCODE_DOWN])
+        if (SDL_GetKeyboardState(NULL)[SDL_SCANCODE_DOWN] || SDL_GetKeyboardState(NULL)[SDL_SCANCODE_S])
         {
             if (worldMap[(int)(posX - dirX * moveSpeed)][(int)posY] == 0)
                 posX -= dirX * moveSpeed;
@@ -262,7 +280,7 @@ int main(int argc, char *argv[])
                 posY -= dirY * moveSpeed;
         }
         //rotate to the right
-        if (SDL_GetKeyboardState(NULL)[SDL_SCANCODE_RIGHT])
+        if (SDL_GetKeyboardState(NULL)[SDL_SCANCODE_RIGHT] || SDL_GetKeyboardState(NULL)[SDL_SCANCODE_D])
         {
             double oldDirX = dirX;
             dirX = dirX * cos(-rotSpeed) - dirY * sin(-rotSpeed);
@@ -272,7 +290,7 @@ int main(int argc, char *argv[])
             planeY = oldPlaneX * sin(-rotSpeed) + planeY * cos(-rotSpeed);
         }
         //rotate to the left
-        if (SDL_GetKeyboardState(NULL)[SDL_SCANCODE_LEFT])
+        if (SDL_GetKeyboardState(NULL)[SDL_SCANCODE_LEFT] || SDL_GetKeyboardState(NULL)[SDL_SCANCODE_A])
         {
             double oldDirX = dirX;
             dirX = dirX * cos(rotSpeed) - dirY * sin(rotSpeed);
