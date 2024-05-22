@@ -15,10 +15,12 @@ SDL.h
 -
 SDL_image.h
 -
+SDL_ttf.h
+-
 stdio.h
 -
 
-/Users/saharmohamed/CLionProjects/TheMaze/src/main.c
+/Users/saharmohamed/CLionProjects/TheMaze/src/maze.c
 ../inc/maze.h
 /Users/saharmohamed/CLionProjects/TheMaze/inc/maze.h
 
@@ -31,6 +33,14 @@ begin_code.h
 /opt/homebrew/Cellar/sdl2_image/2.8.2_1/include/SDL2/begin_code.h
 close_code.h
 /opt/homebrew/Cellar/sdl2_image/2.8.2_1/include/SDL2/close_code.h
+
+/opt/homebrew/Cellar/sdl2_ttf/2.22.0/include/SDL2/SDL_ttf.h
+SDL.h
+/opt/homebrew/Cellar/sdl2_ttf/2.22.0/include/SDL2/SDL.h
+begin_code.h
+/opt/homebrew/Cellar/sdl2_ttf/2.22.0/include/SDL2/begin_code.h
+close_code.h
+/opt/homebrew/Cellar/sdl2_ttf/2.22.0/include/SDL2/close_code.h
 
 /opt/homebrew/opt/sdl2/include/SDL2/SDL.h
 SDL_main.h

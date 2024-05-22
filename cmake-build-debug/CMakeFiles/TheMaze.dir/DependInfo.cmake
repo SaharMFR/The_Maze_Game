@@ -17,6 +17,7 @@ set(CMAKE_C_COMPILER_ID "AppleClang")
 set(CMAKE_C_TARGET_INCLUDE_PATH
   "/opt/homebrew/opt/sdl2/include/SDL2"
   "/opt/homebrew/Cellar/sdl2_image/2.8.2_1/include/SDL2"
+  "/opt/homebrew/Cellar/sdl2_ttf/2.22.0/include/SDL2"
   )
 
 # The set of dependency files which are needed:

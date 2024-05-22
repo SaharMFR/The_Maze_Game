@@ -18,11 +18,19 @@
 
 #define screenWidth 1024
 #define screenHeight 700
-#define mapWidth 24
-#define mapHeight 24
+//#define mapWidth 24
+//#define mapHeight 24
 
+int startPage(SDL_Renderer *renderer, int quit, SDL_Event e);
+char mazesPage(SDL_Renderer *renderer, int quit, SDL_Event e);
+void verLine(SDL_Renderer *renderer, int x, int startY, int endY,
+             SDL_Color color);
+void drawButton(SDL_Renderer *renderer, int x, int y, int width, int height,
+                SDL_Color color);
+int **readMazeFile(const char *filename, int *rows, int *cols);
+void freeMaze(int **maze, int rows);
+void displayMinimap(SDL_Renderer *renderer, int **maze, int width, int height,
+                    double posY, double posX, double dirY, double dirX,
+                    double planeY, double planeX);
 
-void verLine(SDL_Renderer *renderer, int x, int startY, int endY, SDL_Color color);
-void drawButton(SDL_Renderer *renderer, int x, int y, int width, int height, SDL_Color color);
-
-#endif //THEMAZE_MAZE_H
+#endif

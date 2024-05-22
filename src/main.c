@@ -1,32 +1,31 @@
 #include "../inc/maze.h"
 
-int worldMap[mapWidth][mapHeight] =
-        {
-                {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-                {1, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 3, 0, 3, 0, 3, 0, 0, 0, 1},
-                {1, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-                {1, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0, 1},
-                {1, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-                {1, 0, 0, 0, 0, 0, 2, 2, 0, 2, 2, 0, 0, 0, 0, 3, 0, 3, 0, 3, 0, 0, 0, 1},
-                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-                {1, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-                {1, 4, 0, 4, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-                {1, 4, 0, 0, 0, 0, 5, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-                {1, 4, 0, 4, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-                {1, 4, 0, 4, 4, 4, 4, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-                {1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-                {1, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-                {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
-        };
+//int worldMap[mapWidth][mapHeight] =
+//{{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+// {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+// {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+// {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+// {1, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 3, 0, 3, 0, 3, 0, 0, 0, 1},
+// {1, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+// {1, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0, 1},
+// {1, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+// {1, 0, 0, 0, 0, 0, 2, 2, 0, 2, 2, 0, 0, 0, 0, 3, 0, 3, 0, 3, 0, 0, 0, 1},
+// {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+// {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+// {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+// {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+// {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+// {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+// {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+// {1, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+// {1, 4, 0, 4, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+// {1, 4, 0, 0, 0, 0, 5, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+// {1, 4, 0, 4, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+// {1, 4, 0, 4, 4, 4, 4, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+// {1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+// {1, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+// {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+//};
 
 
 /**
@@ -39,7 +38,8 @@ int main(int argc, char *argv[])
 {
     double posX = 22, posY = 12;  //x and y start position
     double dirX = -1, dirY = 0;    //initial direction vector
-    double planeX = 0, planeY = 0.66; //the 2d raycaster version of camera plane
+    //the 2d raycaster version of camera plane
+    double planeX = 0, planeY = 0.66;
 
     double time = 0;               //time of current frame
     double oldTime = 0;            //time of previous frame
@@ -48,93 +48,84 @@ int main(int argc, char *argv[])
     SDL_Renderer *renderer = NULL;
 
     SDL_Init(SDL_INIT_VIDEO);
-    SDL_CreateWindowAndRenderer(screenWidth, screenHeight, 0, &window, &renderer);
+    SDL_CreateWindowAndRenderer(screenWidth, screenHeight,
+                                0, &window, &renderer);
     SDL_SetWindowTitle(window, "Sahar's Maze Game");
 
-    SDL_Texture *image = IMG_LoadTexture(renderer, "../assets/background.png");
-    if (image == NULL)
-    {
-        printf("Failed to load image! SDL_Error: %s\n", SDL_GetError());
-        return 1;
-    }
-
-    // Button parameters
-    int buttonX = screenWidth / 2 - 50;
-    int buttonY = screenHeight - 80;
-    int buttonWidth = 100;
-    int buttonHeight = 50;
 
     // Main loops flags
-    int quit = 0, start = 0;
+    int quit = 0, start = 0, mapWidth, mapHeight;
+    char maze = '0';
+    char *filename = (char *) malloc(20 * sizeof(char));
+    int **worldMap;
+
 
     // Event handler
     SDL_Event e;
 
     // Starting loop
-    while (!quit && !start)
+    quit = startPage(renderer, quit, e);
+
+    maze = mazesPage(renderer, quit, e);
+
+//    maze = '1';
+    if (maze == '0')
     {
-        // Handle events on queue
-        while (SDL_PollEvent(&e) != 0)
-        {
-            // User requests quit
-            if (e.type == SDL_QUIT)
-            {
-                quit = 1;
-            }
-                // Handle mouse click
-            else if (e.type == SDL_MOUSEBUTTONDOWN)
-            {
-                int mouseX, mouseY;
-                SDL_GetMouseState(&mouseX, &mouseY);
-                // Check if the mouse click is within the button area
-                if (mouseX >= buttonX && mouseX <= buttonX + buttonWidth && mouseY >= buttonY && mouseY <= buttonY + buttonHeight)
-                {
-                    // Start button clicked
-                    start = 1;
-                    // Implement the action you want to take when the button is clicked
-                }
-            }
-        }
+        quit = 1;
+    }
+    else
+    {
+        strcat(filename, "../mazes/maze");
+        strcat(filename, &maze);
+        strcat(filename, ".txt");
 
-        // Clear screen
-        SDL_RenderClear(renderer);
-
-        // Render background image
-        SDL_RenderCopy(renderer, image, NULL, NULL);
-
-        // Render start button
-        drawButton(renderer, buttonX, buttonY, buttonWidth, buttonHeight, (SDL_Color){0, 0, 0, 255});
-
-        // Update screen
-        SDL_RenderPresent(renderer);
+        worldMap = readMazeFile(filename, &mapHeight, &mapWidth);
     }
 
-    // Free resources and close SDL
-    SDL_DestroyTexture(image);
+
+    int isMinimapVisible = 1;
 
     while (!quit)
     {
         SDL_Event event;
-        if (SDL_PollEvent(&event) && event.type == SDL_QUIT)
-            quit = 1;
+        while (SDL_PollEvent(&event))
+        {
+            if (event.type == SDL_QUIT)
+                quit = 1;
+            if (event.type == SDL_MOUSEBUTTONDOWN)
+            {
+                int mouseX, mouseY;
+                SDL_GetMouseState(&mouseX, &mouseY);
+                if (mouseX >= screenWidth - 50 && mouseX <= screenWidth - 10 &&
+                    mouseY >= screenHeight - 50 && mouseY <= screenHeight - 10)
+                {
+                    isMinimapVisible = !isMinimapVisible;
+                }
+            }
+        }
 
-        SDL_SetRenderDrawColor(renderer, 0, 0x70, 0, 0xFF); // Green color for earth
+        // Green color for earth
+        SDL_SetRenderDrawColor(renderer, 0, 0x70, 0, 0xFF);
         SDL_RenderClear(renderer);
 
         // Render upper half with baby blue color
         SDL_Rect upperHalfRect = {0, 0, screenWidth, screenHeight / 2};
-        SDL_SetRenderDrawColor(renderer, 0x40, 0xA2, 0xFF, 0xFF); // Baby blue color for sky
+        // Baby blue color for sky
+        SDL_SetRenderDrawColor(renderer, 0x40, 0xA2, 0xFF, 0xFF);
         SDL_RenderFillRect(renderer, &upperHalfRect);
 
         // Render lower half with green color
-        SDL_Rect lowerHalfRect = {0, screenHeight / 2, screenWidth, screenHeight / 2};
-        SDL_SetRenderDrawColor(renderer, 0x00, 0x99, 0x00, 0xFF); // Green color for earth
+        SDL_Rect lowerHalfRect = {0, screenHeight / 2, screenWidth,
+                                  screenHeight / 2};
+        // Green color for earth
+        SDL_SetRenderDrawColor(renderer, 0x00, 0x99, 0x00, 0xFF);
         SDL_RenderFillRect(renderer, &lowerHalfRect);
 
         for (int x = 0; x < screenWidth; x++)
         {
             //calculate ray position and direction
-            double cameraX = 2 * x / (double)screenWidth - 1; //x-coordinate in camera space
+            //x-coordinate in camera space
+            double cameraX = 2 * x / (double)screenWidth - 1;
             double rayDirX = dirX + planeX * cameraX;
             double rayDirY = dirY + planeY * cameraX;
 
@@ -183,7 +174,8 @@ int main(int argc, char *argv[])
             //perform DDA
             while (hit == 0)
             {
-                //jump to next map square, either in x-direction, or in y-direction
+                //jump to next map square
+                // either in x-direction, or in y-direction
                 if (sideDistX < sideDistY)
                 {
                     sideDistX += deltaDistX;
@@ -222,19 +214,19 @@ int main(int argc, char *argv[])
             switch (worldMap[mapX][mapY])
             {
                 case 1:
-                    color = (SDL_Color){115, 115, 115, 255}; // red
+                    color = (SDL_Color){80, 80, 80, 255}; // gray
                     break;
                 case 2:
-                    color = (SDL_Color){115, 115, 115, 255}; // green
+                    color = (SDL_Color){0, 0, 115, 255}; // blue
                     break;
                 case 3:
-                    color = (SDL_Color){115, 115, 115, 255}; // blue
+                    color = (SDL_Color){200, 115, 200, 255}; // yellow
                     break;
                 case 4:
-                    color = (SDL_Color){115, 115, 115, 255}; // white
+                    color = (SDL_Color){115, 0, 0, 255}; // red
                     break;
                 default:
-                    color = (SDL_Color){115, 115, 115, 255}; // yellow
+                    color = (SDL_Color){115, 115, 115, 255}; // gray
                     break;
             }
 
@@ -250,21 +242,34 @@ int main(int argc, char *argv[])
             verLine(renderer, x, drawStart, drawEnd, color);
         }
 
+        if (isMinimapVisible) {
+            displayMinimap(renderer, worldMap, mapWidth, mapHeight, posX, posY,
+                           dirX, dirY, planeX, planeY);
+        }
+
+        // Render toggle button
+        drawButton(renderer, screenWidth - 50, screenHeight - 50, 40, 40,
+                   (SDL_Color){255, 255, 255, 255});
+
         //Timing for input and FPS counter
         oldTime = time;
         time = SDL_GetTicks();
-        double frameTime = (time - oldTime) / 1000.0; //frameTime is the time this frame has taken, in seconds
+        //frameTime is the time this frame has taken, in seconds
+        double frameTime = (time - oldTime) / 1000.0;
 
         SDL_RenderPresent(renderer);
-        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+//        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
         SDL_RenderClear(renderer);
 
         //speed modifiers
-        double moveSpeed = frameTime * 5.0; //the constant value is in squares/second
-        double rotSpeed = frameTime * 3.0;  //the constant value is in radians/second
+        //the constant value is in squares/second
+        double moveSpeed = frameTime * 4.0;
+        //the constant value is in radians/second
+        double rotSpeed = frameTime * 2.0;
 
         //move forward if no wall in front of you
-        if (SDL_GetKeyboardState(NULL)[SDL_SCANCODE_UP] || SDL_GetKeyboardState(NULL)[SDL_SCANCODE_W])
+        if (SDL_GetKeyboardState(NULL)[SDL_SCANCODE_UP] ||
+            SDL_GetKeyboardState(NULL)[SDL_SCANCODE_W])
         {
             if (worldMap[(int)(posX + dirX * moveSpeed)][(int)posY] == 0)
                 posX += dirX * moveSpeed;
@@ -272,7 +277,8 @@ int main(int argc, char *argv[])
                 posY += dirY * moveSpeed;
         }
         //move backwards if no wall behind you
-        if (SDL_GetKeyboardState(NULL)[SDL_SCANCODE_DOWN] || SDL_GetKeyboardState(NULL)[SDL_SCANCODE_S])
+        if (SDL_GetKeyboardState(NULL)[SDL_SCANCODE_DOWN] ||
+            SDL_GetKeyboardState(NULL)[SDL_SCANCODE_S])
         {
             if (worldMap[(int)(posX - dirX * moveSpeed)][(int)posY] == 0)
                 posX -= dirX * moveSpeed;
@@ -280,7 +286,8 @@ int main(int argc, char *argv[])
                 posY -= dirY * moveSpeed;
         }
         //rotate to the right
-        if (SDL_GetKeyboardState(NULL)[SDL_SCANCODE_RIGHT] || SDL_GetKeyboardState(NULL)[SDL_SCANCODE_D])
+        if (SDL_GetKeyboardState(NULL)[SDL_SCANCODE_RIGHT] ||
+            SDL_GetKeyboardState(NULL)[SDL_SCANCODE_D])
         {
             double oldDirX = dirX;
             dirX = dirX * cos(-rotSpeed) - dirY * sin(-rotSpeed);
@@ -290,7 +297,8 @@ int main(int argc, char *argv[])
             planeY = oldPlaneX * sin(-rotSpeed) + planeY * cos(-rotSpeed);
         }
         //rotate to the left
-        if (SDL_GetKeyboardState(NULL)[SDL_SCANCODE_LEFT] || SDL_GetKeyboardState(NULL)[SDL_SCANCODE_A])
+        if (SDL_GetKeyboardState(NULL)[SDL_SCANCODE_LEFT] ||
+            SDL_GetKeyboardState(NULL)[SDL_SCANCODE_A])
         {
             double oldDirX = dirX;
             dirX = dirX * cos(rotSpeed) - dirY * sin(rotSpeed);
@@ -301,6 +309,8 @@ int main(int argc, char *argv[])
         }
     }
 
+    freeMaze(worldMap, mapHeight);
+    free(filename);
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();

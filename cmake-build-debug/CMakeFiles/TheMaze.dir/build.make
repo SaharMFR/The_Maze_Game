@@ -106,6 +106,7 @@ TheMaze: CMakeFiles/TheMaze.dir/build.make
 TheMaze: /opt/homebrew/lib/libSDL2_image.dylib
 TheMaze: /opt/homebrew/lib/libSDL2.dylib
 TheMaze: /opt/homebrew/lib/libSDL2main.a
+TheMaze: /opt/homebrew/lib/libSDL2_ttf.dylib
 TheMaze: CMakeFiles/TheMaze.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/saharmohamed/CLionProjects/TheMaze/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable TheMaze"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TheMaze.dir/link.txt --verbose=$(VERBOSE)
