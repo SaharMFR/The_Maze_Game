@@ -20,7 +20,7 @@ SDL_ttf.h
 stdio.h
 -
 
-/Users/saharmohamed/CLionProjects/TheMaze/src/maze.c
+/Users/saharmohamed/CLionProjects/TheMaze/src/main.c
 ../inc/maze.h
 /Users/saharmohamed/CLionProjects/TheMaze/inc/maze.h
 

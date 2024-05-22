@@ -68,7 +68,6 @@ int main(int argc, char *argv[])
 
     maze = mazesPage(renderer, quit, e);
 
-//    maze = '1';
     if (maze == '0')
     {
         quit = 1;
@@ -225,6 +224,21 @@ int main(int argc, char *argv[])
                 case 4:
                     color = (SDL_Color){115, 0, 0, 255}; // red
                     break;
+                case 5:
+                    color = (SDL_Color){0, 204, 255, 255}; // red
+                    break;
+                case 6:
+                    color = (SDL_Color){255, 255, 0, 255}; // red
+                    break;
+                case 7:
+                    color = (SDL_Color){0, 0, 255, 50}; // red
+                    break;
+                case 8:
+                    color = (SDL_Color){166, 0, 0, 255}; // red
+                    break;
+                case 9:
+                    color = (SDL_Color){0, 247, 255, 255}; // red
+                    break;
                 default:
                     color = (SDL_Color){115, 115, 115, 255}; // gray
                     break;
@@ -285,9 +299,28 @@ int main(int argc, char *argv[])
             if (worldMap[(int)posX][(int)(posY - dirY * moveSpeed)] == 0)
                 posY -= dirY * moveSpeed;
         }
+        //move right if no wall beside you
+        if (SDL_GetKeyboardState(NULL)[SDL_SCANCODE_D])
+        {
+            double rightX = dirY * moveSpeed;
+            double rightY = -dirX * moveSpeed;
+            if (worldMap[(int)(posX + rightX)][(int)posY] == 0)
+                posX += rightX;
+            if (worldMap[(int)posX][(int)(posY + rightY)] == 0)
+                posY += rightY;
+        }
+        //move left if no wall beside you
+        if (SDL_GetKeyboardState(NULL)[SDL_SCANCODE_A])
+        {
+            double leftX = -dirY * moveSpeed;
+            double leftY = dirX * moveSpeed;
+            if (worldMap[(int)(posX + leftX)][(int)posY] == 0)
+                posX += leftX;
+            if (worldMap[(int)posX][(int)(posY + leftY)] == 0)
+                posY += leftY;
+        }
         //rotate to the right
-        if (SDL_GetKeyboardState(NULL)[SDL_SCANCODE_RIGHT] ||
-            SDL_GetKeyboardState(NULL)[SDL_SCANCODE_D])
+        if (SDL_GetKeyboardState(NULL)[SDL_SCANCODE_RIGHT])
         {
             double oldDirX = dirX;
             dirX = dirX * cos(-rotSpeed) - dirY * sin(-rotSpeed);
@@ -297,8 +330,7 @@ int main(int argc, char *argv[])
             planeY = oldPlaneX * sin(-rotSpeed) + planeY * cos(-rotSpeed);
         }
         //rotate to the left
-        if (SDL_GetKeyboardState(NULL)[SDL_SCANCODE_LEFT] ||
-            SDL_GetKeyboardState(NULL)[SDL_SCANCODE_A])
+        if (SDL_GetKeyboardState(NULL)[SDL_SCANCODE_LEFT])
         {
             double oldDirX = dirX;
             dirX = dirX * cos(rotSpeed) - dirY * sin(rotSpeed);
